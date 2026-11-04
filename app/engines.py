@@ -41,7 +41,7 @@ class FasterWhisperTranscriber:
             compute_type = "int8"
         self.model = WhisperModel(ASR_MODEL, device=device, compute_type=compute_type)
 
-    def transcribe(self, audio_path: Path) -> list[SpeechSegment]:
+    def transcribe(self, audio_path: Path, progress=None) -> list[SpeechSegment]:
         segments, _info = self.model.transcribe(
             str(audio_path),
             language="ja",
@@ -52,10 +52,18 @@ class FasterWhisperTranscriber:
             condition_on_previous_text=True,
         )
         result: list[SpeechSegment] = []
+        duration = max(float(getattr(_info, "duration", 0.0) or 0.0), 1.0)
+        last_reported = 0
         for segment in segments:
             text = re.sub(r"\s+", " ", segment.text).strip()
             if text and float(segment.end) > float(segment.start):
                 result.append(SpeechSegment(float(segment.start), float(segment.end), text))
+            if progress is not None:
+                # Report actual audio position, not a fabricated time-based animation.
+                current = min(40, 15 + int(25 * min(float(segment.end), duration) / duration))
+                if current > last_reported:
+                    last_reported = current
+                    progress(current, f"Transcribing Japanese dialogue… {min(100, int(100 * min(float(segment.end), duration) / duration))}% of audio scanned")
         if not result:
             raise RuntimeError("Whisper could not find any Japanese speech in this video.")
         return result
