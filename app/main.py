@@ -99,8 +99,12 @@ def _process_transcription(job_id: str) -> None:
     try:
         update_job(job_id, status="extracting", progress=5, message="Extracting audio from video…", error=None)
         extract_audio(Path(item["video_path"]), audio_path)
-        update_job(job_id, status="transcribing", progress=12, message="Transcribing Japanese dialogue with Whisper…")
-        segments = get_transcriber().transcribe(audio_path)
+        update_job(job_id, status="transcribing", progress=13, message="Loading Japanese speech-recognition model. First run may take a few minutes while model weights download…")
+        transcriber = get_transcriber()
+        update_job(job_id, progress=15, message="Whisper model loaded. Scanning Japanese audio…")
+        def asr_progress(value: int, message: str) -> None:
+            update_job(job_id, progress=value, message=message)
+        segments = transcriber.transcribe(audio_path, progress=asr_progress)
         update_job(job_id, progress=42, message="Detecting speakers…")
         segments = assign_speakers(audio_path, segments, bool(item.get("diarization")))
         update_job(job_id, progress=48, message="Translating Japanese dialogue into conversational Tamil…")
