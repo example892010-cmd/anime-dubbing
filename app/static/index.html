@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10100f">
+  <title>NammaDub — Japanese to Tamil dubbing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:dark;--bg:#10100f;--panel:#181918;--panel2:#202220;--line:#303430;--muted:#a3aaa2;--text:#f2f4ef;--lime:#d1fc67;--lime2:#b7ed42;--red:#ff8179;--radius:18px}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#26301c 0,transparent 42%),var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh}
+    .wrap{max-width:1060px;margin:auto;padding:30px 22px 70px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:44px}.brand{display:flex;gap:11px;align-items:center;font-weight:800;letter-spacing:-.04em;font-size:21px}.mark{width:34px;height:34px;border-radius:11px;background:var(--lime);color:#151811;display:grid;place-items:center;font-weight:900}.tag{font:11px 'DM Mono',monospace;color:#c8d5b6;border:1px solid #39432c;border-radius:999px;padding:7px 11px;letter-spacing:.04em}
+    .hero{max-width:720px;margin-bottom:30px}.eyebrow{color:var(--lime);text-transform:uppercase;letter-spacing:.18em;font:11px 'DM Mono',monospace;margin-bottom:12px}.hero h1{font-size:clamp(34px,6vw,58px);letter-spacing:-.065em;line-height:1.02;margin:0 0 16px;font-weight:800}.hero h1 span{color:var(--lime)}.hero p{color:var(--muted);font-size:16px;line-height:1.65;margin:0;max-width:650px}.steps{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:26px 0 30px}.step{border:1px solid var(--line);background:#141614;border-radius:99px;padding:8px 12px;font-size:12px;color:#c6ccc2}.step b{color:var(--lime);margin-right:7px;font:11px 'DM Mono',monospace}.step-arrow{color:#596052;font-size:12px}
+    .layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(260px,.7fr);gap:16px;align-items:start}.panel{background:linear-gradient(145deg,#1b1e1a,#171917);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:0 12px 44px #0002}.panel h2{font-size:16px;letter-spacing:-.02em;margin:0 0 6px}.sub{font-size:12px;line-height:1.5;color:var(--muted);margin:0 0 19px}.field{margin:17px 0}.field label,.label{display:block;font-size:12px;font-weight:700;color:#dce2d7;margin-bottom:8px}.input,select,textarea{width:100%;background:#101210;border:1px solid #373c36;color:var(--text);border-radius:11px;padding:12px 13px;font:13px 'DM Sans',sans-serif;outline:none}.input:focus,select:focus,textarea:focus{border-color:var(--lime)}input[type=file]{display:none}.drop{border:1px dashed #59634e;background:#151914;border-radius:14px;padding:20px;text-align:center;cursor:pointer;transition:.15s}.drop:hover,.drop.drag{border-color:var(--lime);background:#1e2618}.drop .upload{font-size:23px;color:var(--lime);margin-bottom:7px}.drop strong{font-size:13px;display:block}.drop small{display:block;color:var(--muted);font-size:11px;margin-top:5px}.file-name{color:var(--lime);font:11px 'DM Mono',monospace;margin-top:9px;word-break:break-all}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.radio-card{background:#121512;border:1px solid #363c34;border-radius:12px;padding:12px;display:flex;gap:9px;align-items:flex-start;cursor:pointer;min-height:68px}.radio-card:has(input:checked){border-color:#8cac4b;background:#20271a}.radio-card input{accent-color:var(--lime);margin-top:3px}.radio-card strong{font-size:12px;display:block}.radio-card small{font-size:10px;color:var(--muted);display:block;line-height:1.45;margin-top:4px}.hint{font-size:11px;line-height:1.5;color:#a5ad9f;margin:8px 0}.checks{display:grid;gap:11px;margin-top:15px}.check{display:flex;gap:9px;align-items:flex-start;color:#c2cabe;font-size:12px;line-height:1.45}.check input{accent-color:var(--lime);margin-top:2px}.primary{border:0;background:var(--lime);color:#151810;font-weight:800;font-size:13px;padding:14px 17px;border-radius:12px;width:100%;cursor:pointer;transition:.15s}.primary:hover{background:var(--lime2);transform:translateY(-1px)}.primary:disabled{opacity:.4;cursor:not-allowed;transform:none}.note{font-size:10px;color:#818a7d;line-height:1.6;margin-top:12px}.side{position:sticky;top:18px}.sidebox{border:1px solid var(--line);border-radius:14px;padding:15px;margin-bottom:12px;background:#141714}.sidehead{font:10px 'DM Mono',monospace;color:var(--lime);text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}.sidebox p{font-size:11px;color:#aeb7a9;line-height:1.6;margin:0}.statusline{display:flex;align-items:center;gap:8px;font-size:12px;color:#d5dbd0}.dot{width:7px;height:7px;border-radius:50%;background:#6f7a66}.dot.good{background:var(--lime);box-shadow:0 0 12px #d1fc6770}.dot.bad{background:var(--red)}
+    .progress-wrap{display:none;margin-top:18px;border:1px solid var(--line);border-radius:14px;padding:16px;background:#121512}.progress-meta{display:flex;justify-content:space-between;gap:10px;font-size:12px;margin-bottom:10px}.progress-meta span:last-child{color:var(--lime);font:11px 'DM Mono',monospace}.bar{height:5px;background:#33392f;border-radius:99px;overflow:hidden}.bar div{height:100%;background:var(--lime);width:0;transition:width .25s}.status-msg{font-size:11px;color:var(--muted);margin-top:9px;line-height:1.45}.error{display:none;background:#351e1c;border:1px solid #75423e;color:#ffb2aa;border-radius:11px;padding:12px;font-size:12px;line-height:1.5;margin-top:12px;white-space:pre-wrap}.review{display:none;margin-top:20px}.review-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}.review-head h2{margin:0;font-size:18px}.count{font:10px 'DM Mono',monospace;color:var(--lime);border:1px solid #53643a;border-radius:99px;padding:6px 9px}.table{border:1px solid var(--line);border-radius:14px;overflow:hidden}.rowhead,.line{display:grid;grid-template-columns:80px minmax(180px,.9fr) minmax(220px,1.1fr);gap:12px;padding:12px;border-bottom:1px solid #2d322c}.rowhead{background:#20241f;color:#9fa99a;font:10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.08em}.line:last-child{border-bottom:0}.time{color:#9ba590;font:10px 'DM Mono',monospace;padding-top:5px}.jp{font-size:12px;line-height:1.6;color:#c3cbc0;white-space:pre-wrap}.speaker{display:inline-block;color:#a9ba8e;font:9px 'DM Mono',monospace;margin-top:5px}.ta{font-family:'Noto Sans Tamil','DM Sans',sans-serif;min-height:70px;line-height:1.55;resize:vertical;font-size:13px}.render{margin-top:15px;max-width:300px}.download{display:none;margin-top:14px;background:#1d2915;border:1px solid #617f35;border-radius:14px;padding:17px}.download strong{color:var(--lime);display:block;font-size:14px;margin-bottom:5px}.download a{display:inline-block;color:#171b12;background:var(--lime);text-decoration:none;padding:10px 14px;border-radius:9px;font-size:12px;font-weight:800;margin-top:10px}.footer{margin-top:44px;text-align:center;color:#677064;font-size:10px;line-height:1.7}.hide{display:none!important}
+    @media(max-width:800px){.layout{grid-template-columns:1fr}.side{position:static}.top{margin-bottom:32px}.wrap{padding:20px 14px 50px}.panel{padding:18px}.rowhead,.line{grid-template-columns:56px minmax(0,1fr);gap:8px}.rowhead div:nth-child(3){display:none}.line .ta{grid-column:2}.line .jp{grid-column:2}.time{grid-row:span 2}.grid2{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="top"><div class="brand"><div class="mark">ந</div>namma<span style="color:var(--lime)">dub</span></div><div class="tag">LOCAL AI STUDIO · 25 MIN MAX</div></header>
+    <section class="hero">
+      <div class="eyebrow">Japanese → Tamil · video dubbing</div>
+      <h1>Make it sound like<br><span>they speak Tamil.</span></h1>
+      <p>Transcribe Japanese dialogue, adapt it into natural casual Tamil, clone a permitted reference voice, and render a timed MP4. Your media and AI processing stay on your computer.</p>
+      <div class="steps"><div class="step"><b>01</b>Upload</div><span class="step-arrow">→</span><div class="step"><b>02</b>Translate</div><span class="step-arrow">→</span><div class="step"><b>03</b>Review</div><span class="step-arrow">→</span><div class="step"><b>04</b>Dub & export</div></div>
+    </section>
+    <div class="layout">
+      <section class="panel">
+        <h2>Start a dubbing project</h2><p class="sub">MP4, MKV, MOV, WebM, AVI or M4V · maximum 25 minutes</p>
+        <form id="jobForm">
+          <div class="field">
+            <label for="video">1. Source Japanese video</label>
+            <label class="drop" id="videoDrop" for="video"><div class="upload">↥</div><strong>Choose video or drop it here</strong><small>Video file · 25-minute maximum</small><div class="file-name" id="videoName"></div></label>
+            <input id="video" name="video" type="file" accept="video/mp4,video/x-matroska,video/quicktime,video/webm,video/x-msvideo,.m4v" required>
+          </div>
+          <div class="field">
+            <label>2. Voice to clone</label>
+            <div class="grid2">
+              <label class="radio-card"><input type="radio" name="voice_source" value="video" checked><span><strong>Extract from this video</strong><small>Uses a clean Japanese utterance as the voice prompt. Cross-language voice matching is experimental.</small></span></label>
+              <label class="radio-card"><input type="radio" name="voice_source" value="upload"><span><strong>Upload a voice sample</strong><small>Best control. Use a clean 5–15 second clip and provide its exact transcript. This same voice is used for all speakers.</small></span></label>
+            </div>
+          </div>
+          <div id="referenceFields" class="field hide">
+            <label for="reference">Voice reference audio</label>
+            <label class="drop" for="reference"><div class="upload">♫</div><strong>Choose a clean voice sample</strong><small>WAV, MP3, M4A, FLAC · 4–30 seconds</small><div class="file-name" id="referenceName"></div></label>
+            <input id="reference" name="reference_audio" type="file" accept="audio/*">
+            <div style="margin-top:12px"><label for="referenceText">Exact words spoken in the sample</label><textarea class="input" id="referenceText" rows="2" placeholder="Type the exact transcript. Tamil sample is recommended for Tamil pronunciation."></textarea></div>
+          </div>
+          <div class="field">
+            <label for="translator">3. Translation engine</label>
+            <select id="translator" name="translator"><option value="auto">Auto — local Ollama for casual Tamil, NLLB fallback</option><option value="ollama">Ollama — casual spoken Tamil (recommended)</option><option value="nllb">NLLB-200 — offline translation fallback</option></select>
+            <p class="hint">For more natural colloquial Tamil, install Ollama and run <code>ollama pull qwen2.5:7b</code>. Without it, Auto falls back to NLLB-200, which may sound more formal.</p>
+          </div>
+          <div class="checks">
+            <label class="check"><input id="diarization" type="checkbox"><span>Detect multiple speakers (requires a Hugging Face token, model access and the optional diarization package). For separate character voices, extract each voice from the video; an uploaded voice sample is applied to every speaker.</span></label>
+            <label class="check"><input id="background" type="checkbox" checked><span>Try to preserve background music/effects with Demucs when installed. Without Demucs, original audio is ducked under Tamil dialogue; some Japanese voice may remain faintly audible.</span></label>
+            <label class="check"><input id="consent" type="checkbox" required><span>I own this voice or have explicit permission to clone it, and I have the rights to process this video.</span></label>
+          </div>
+          <button class="primary" id="startButton" type="submit" style="margin-top:20px">Transcribe & translate video <span aria-hidden="true">↗</span></button>
+          <div class="error" id="errorBox"></div>
+          <div class="progress-wrap" id="progressWrap"><div class="progress-meta"><span id="statusTitle">Preparing project…</span><span id="percent">0%</span></div><div class="bar"><div id="progressBar"></div></div><div class="status-msg" id="statusMessage">The AI pipeline will start after upload.</div></div>
+        </form>
+        <section class="review" id="review">
+          <div class="review-head"><h2>Review the Tamil dialogue</h2><span class="count" id="lineCount">0 LINES</span></div>
+          <p class="sub">Edit any line to make the Tamil sound more natural. Timing follows the Japanese speech. The generated voice is cloned from the reference selected above.</p>
+          <div class="table"><div class="rowhead"><div>Timing</div><div>Japanese source</div><div>Tamil dub · editable</div></div><div id="segments"></div></div>
+          <button class="primary render" id="renderButton" type="button">Save edits & generate dubbed MP4 ↗</button>
+        </section>
+        <div class="download" id="downloadBox"><strong>Your dubbed video is ready.</strong><span style="color:#b6c3a9;font-size:11px">MP4 · Tamil voice track · original video picture</span><br><a id="downloadLink" href="#">Download dubbed video ↓</a></div>
+      </section>
+      <aside class="side">
+        <div class="sidebox"><div class="sidehead">System check</div><div class="statusline"><span class="dot" id="ffmpegDot"></span><span id="ffmpegText">Checking FFmpeg…</span></div><div class="statusline" style="margin-top:9px"><span class="dot" id="ollamaDot"></span><span id="ollamaText">Checking Ollama…</span></div><div class="statusline" style="margin-top:9px"><span class="dot" id="hfDot"></span><span id="hfText">Checking model access…</span></div></div>
+        <div class="sidebox"><div class="sidehead">What runs locally</div><p><b>Whisper</b> recognizes Japanese speech and timestamps. <b>Ollama / NLLB</b> translates to Tamil. <b>IndicF5</b> generates Tamil speech from a reference voice. <b>FFmpeg</b> places it into the original video.</p></div>
+        <div class="sidebox"><div class="sidehead">Before you start</div><p>First run downloads model weights and can take time. An NVIDIA GPU is strongly recommended. CPU mode works in supported environments but can be slow. This is a local app, not a hosted cloud service or a 25-minute free cloud credit.</p></div>
+        <div class="sidebox"><div class="sidehead">Voice cloning tip</div><p>For the cleanest Tamil pronunciation, upload a 10–15 second Tamil voice sample with its exact transcript. Extracting a Japanese sample is supported but cross-lingual quality varies by voice and scene noise.</p></div>
+      </aside>
+    </div>
+    <footer class="footer">NAMMADUB · SELF-HOSTED · NO PER-MINUTE API BILLING<br>Clone only voices you own or have permission to use. Model licenses and usage restrictions still apply.</footer>
+  </main>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  let currentJob = null;
+  let pollTimer = null;
+  const form = $('jobForm');
+  const videoInput = $('video');
+  const refInput = $('reference');
+  const voiceRadios = [...document.querySelectorAll('input[name="voice_source"]')];
+  const errorBox = $('errorBox');
+
+  function showError(message) { errorBox.textContent = message; errorBox.style.display = 'block'; }
+  function clearError() { errorBox.textContent = ''; errorBox.style.display = 'none'; }
+  function selectedVoice() { return voiceRadios.find(x => x.checked)?.value || 'video'; }
+  function toggleReference() { $('referenceFields').classList.toggle('hide', selectedVoice() !== 'upload'); }
+  voiceRadios.forEach(r => r.addEventListener('change', toggleReference));
+
+  videoInput.addEventListener('change', () => $('videoName').textContent = videoInput.files[0]?.name || '');
+  refInput.addEventListener('change', () => $('referenceName').textContent = refInput.files[0]?.name || '');
+  const drop = $('videoDrop');
+  ['dragenter','dragover'].forEach(type => drop.addEventListener(type, e => {e.preventDefault();drop.classList.add('drag');}));
+  ['dragleave','drop'].forEach(type => drop.addEventListener(type, e => {e.preventDefault();drop.classList.remove('drag');}));
+  drop.addEventListener('drop', e => {if (e.dataTransfer.files.length) {videoInput.files=e.dataTransfer.files;videoInput.dispatchEvent(new Event('change'));}});
+
+  async function checkHealth() {
+    try {
+      const h = await (await fetch('/api/health')).json();
+      $('ffmpegDot').className = 'dot ' + (h.ffmpeg ? 'good' : 'bad');
+      $('ffmpegText').textContent = h.ffmpeg ? 'FFmpeg + ffprobe ready' : 'FFmpeg missing — install it';
+      $('ollamaDot').className = 'dot ' + (h.ollama_available ? 'good' : '');
+      $('ollamaText').textContent = h.ollama_available ? 'Ollama local API found' : 'Ollama not detected · NLLB fallback';
+      $('hfDot').className = 'dot ' + (h.huggingface_token_present ? 'good' : '');
+      $('hfText').textContent = h.huggingface_token_present ? 'Hugging Face token configured' : 'No HF_TOKEN in .env · CLI login may still work';
+    } catch (_) {
+      $('ffmpegText').textContent = 'Backend not reachable';
+      $('ffmpegDot').className = 'dot bad';
+    }
+  }
+  checkHealth();
+
+  function setProgress(job) {
+    $('progressWrap').style.display = 'block';
+    $('statusTitle').textContent = job.status.replaceAll('_',' ').replace(/^./, c=>c.toUpperCase());
+    $('percent').textContent = `${job.progress || 0}%`;
+    $('progressBar').style.width = `${job.progress || 0}%`;
+    $('statusMessage').textContent = job.message || '';
+  }
+
+  function renderSegments(segments) {
+    $('segments').innerHTML = '';
+    $('lineCount').textContent = `${segments.length} LINES`;
+    segments.forEach((segment, index) => {
+      const row = document.createElement('div'); row.className = 'line';
+      const time = document.createElement('div'); time.className = 'time'; time.textContent = `${formatTime(segment.start)}\n${formatTime(segment.end)}`;
+      const source = document.createElement('div'); source.className = 'jp'; source.textContent = segment.source_text;
+      const speaker = document.createElement('div'); speaker.className = 'speaker'; speaker.textContent = segment.speaker_id || 'speaker_0';
+      source.appendChild(document.createElement('br')); source.appendChild(speaker);
+      const tamil = document.createElement('textarea'); tamil.className = 'input ta'; tamil.value = segment.tamil_text || ''; tamil.dataset.index = index; tamil.setAttribute('aria-label', `Tamil translation line ${index+1}`);
+      row.append(time, source, tamil); $('segments').appendChild(row);
+    });
+    $('review').style.display = 'block';
+  }
+  function formatTime(seconds) { const s = Math.max(0, Number(seconds)||0); return `${Math.floor(s/60).toString().padStart(2,'0')}:${(s%60).toFixed(1).padStart(4,'0')}`; }
+
+  async function poll() {
+    if (!currentJob) return;
+    try {
+      const response = await fetch(`/api/jobs/${currentJob}`);
+      const job = await response.json();
+      if (!response.ok) throw new Error(job.detail || 'Could not read job status.');
+      setProgress(job);
+      if (job.status === 'ready_for_review') {
+        clearInterval(pollTimer); pollTimer = null;
+        $('startButton').disabled = false;
+        renderSegments(job.segments || []);
+        if (job.translation_engine) $('statusMessage').textContent += ` Translation engine: ${job.translation_engine}.`;
+      } else if (job.status === 'done') {
+        clearInterval(pollTimer); pollTimer = null;
+        $('renderButton').disabled = false;
+        $('downloadBox').style.display = 'block';
+        $('downloadLink').href = job.download_url;
+      } else if (job.status === 'failed') {
+        clearInterval(pollTimer); pollTimer = null;
+        $('startButton').disabled = false; $('renderButton').disabled = false;
+        showError(job.error || 'The job failed. Check the server terminal for details.');
+      }
+    } catch (err) { clearInterval(pollTimer); pollTimer = null; showError(err.message); $('startButton').disabled = false; }
+  }
+  function beginPolling() { if (pollTimer) clearInterval(pollTimer); pollTimer = setInterval(poll, 2200); poll(); }
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault(); clearError(); $('review').style.display='none'; $('downloadBox').style.display='none';
+    if (!videoInput.files[0]) return showError('Choose a Japanese source video first.');
+    if (!$('consent').checked) return showError('Confirm that you have permission to clone this voice.');
+    if (selectedVoice() === 'upload' && (!refInput.files[0] || !$('referenceText').value.trim())) return showError('Upload a voice sample and enter its exact transcript.');
+    const data = new FormData();
+    data.append('video', videoInput.files[0]); data.append('voice_source', selectedVoice());
+    data.append('translator', $('translator').value); data.append('diarization', $('diarization').checked ? 'true' : 'false');
+    data.append('preserve_background', $('background').checked ? 'true' : 'false'); data.append('voice_consent', 'true');
+    if (selectedVoice() === 'upload') {data.append('reference_audio', refInput.files[0]);data.append('reference_text', $('referenceText').value.trim());}
+    $('startButton').disabled = true; $('renderButton').disabled = true; $('progressWrap').style.display='block'; $('statusTitle').textContent='Uploading'; $('statusMessage').textContent='Sending video to the local server…'; $('percent').textContent='0%'; $('progressBar').style.width='0%';
+    try {
+      const response = await fetch('/api/jobs', {method:'POST',body:data}); const result = await response.json();
+      if (!response.ok) throw new Error(result.detail || 'Could not start the job.');
+      currentJob = result.id; beginPolling();
+    } catch (err) { $('startButton').disabled=false; showError(err.message); }
+  });
+
+  $('renderButton').addEventListener('click', async () => {
+    if (!currentJob) return;
+    clearError(); $('renderButton').disabled=true;
+    const inputs = [...document.querySelectorAll('.ta')];
+    const payload = {segments: inputs.map(x => ({tamil_text:x.value}))};
+    try {
+      const saved = await fetch(`/api/jobs/${currentJob}/segments`, {method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      const savedData = await saved.json(); if (!saved.ok) throw new Error(savedData.detail || 'Could not save Tamil edits.');
+      const response = await fetch(`/api/jobs/${currentJob}/render`, {method:'POST'}); const result = await response.json();
+      if (!response.ok) throw new Error(result.detail || 'Could not start rendering.');
+      $('statusTitle').textContent='Generating Tamil dub'; $('statusMessage').textContent='Loading IndicF5 and creating cloned speech…'; beginPolling();
+    } catch (err) { $('renderButton').disabled=false; showError(err.message); }
+  });
+})();
+</script>
+</body>
+</html>
